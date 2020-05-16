@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1069513161129",
+    "firebase_url": "https://mygas-fe7c2.firebaseio.com",
+    "project_id": "mygas-fe7c2",
+    "storage_bucket": "mygas-fe7c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069513161129:android:a7ffa3faf70012dcb12cb8",
+        "android_client_info": {
+          "package_name": "com.customermygas.bestweb.my_gas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069513161129-knu36ugo3abskij5m2pc9ips6e97okvj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.customermygas.bestweb.my_gas",
+            "certificate_hash": "4e467f0d60bf2f99f9d6f5d8b4c78f218136675a"
+          }
+        },
+        {
+          "client_id": "1069513161129-9mecofasmc995rsuvi19hq3sucj8ltlr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfmCp-q8_xOAUW13hErC1cMcjhGxKf40w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069513161129-9mecofasmc995rsuvi19hq3sucj8ltlr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1069513161129-608v3p4m77in6tf5k3vr20acauh5uqqb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.customermygas.bestweb.myGas"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

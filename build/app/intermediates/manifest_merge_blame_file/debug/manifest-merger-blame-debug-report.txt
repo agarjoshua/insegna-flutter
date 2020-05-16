@@ -1,0 +1,294 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.customermygas.bestweb.my_gas"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+9        android:targetSdkVersion="28" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:9:5-66
+14-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:9:22-64
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+15-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+16-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+17-->[:location] C:\Users\AGAR\Gas_app\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-81
+17-->[:location] C:\Users\AGAR\Gas_app\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-78
+18    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+18-->[:location] C:\Users\AGAR\Gas_app\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-79
+18-->[:location] C:\Users\AGAR\Gas_app\build\location\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-76
+19    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\4bbc120511d980fbb7553f9b92469335\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:13:5-79
+20-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\4bbc120511d980fbb7553f9b92469335\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:13:22-76
+21
+22    <application
+22-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:11:5-52:19
+23        android:name="io.flutter.app.FlutterApplication"
+23-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:12:9-57
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.1.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a219aaa53005fa677df3bfd14ede3871\core-1.1.0\AndroidManifest.xml:24:18-86
+25        android:debuggable="true"
+26        android:icon="@mipmap/ic_launcher"
+26-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:14:9-43
+27        android:label="my_gas"
+27-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:13:9-31
+28        android:supportsRtl="true" >
+28-->[com.facebook.android:facebook-login:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\2dd6eb724ced1f4e0732c22965b0ff40\jetified-facebook-login-4.39.0\AndroidManifest.xml:28:18-44
+29        <activity
+29-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:15:9-26:20
+30            android:name="com.customermygas.bestweb.my_gas.MainActivity"
+30-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:16:13-41
+31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+31-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:19:13-163
+32            android:hardwareAccelerated="true"
+32-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:20:13-47
+33            android:launchMode="singleTop"
+33-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:17:13-43
+34            android:theme="@style/LaunchTheme"
+34-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:18:13-47
+35            android:windowSoftInputMode="adjustResize" >
+35-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:21:13-55
+36            <intent-filter>
+36-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:22:13-25:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:23:17-68
+37-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:23:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:24:17-76
+39-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:24:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <!--
+44             Don't delete the meta-data below.
+45             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+46        -->
+47        <meta-data
+47-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:30:9-32:33
+48            android:name="flutterEmbedding"
+48-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:31:13-44
+49            android:value="2" />
+49-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:32:13-30
+50        <meta-data
+50-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:34:9-35:54
+51            android:name="com.facebook.sdk.ApplicationId"
+51-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:34:20-65
+52            android:value="@string/facebook_app_id" />
+52-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:35:13-52
+53
+54        <activity
+54-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:37:9-40:48
+55            android:name="com.facebook.FacebookActivity"
+55-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:37:19-63
+56            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+56-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:38:13-114
+57            android:label="@string/app_name"
+57-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:40:13-45
+58            android:theme="@style/com_facebook_activity_theme" />
+58-->[com.facebook.android:facebook-common:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a1eaa6b03f6444943cbbeb0f1d29ec60\jetified-facebook-common-4.39.0\AndroidManifest.xml:32:13-63
+59        <activity
+59-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:41:9-50:20
+60            android:name="com.facebook.CustomTabActivity"
+60-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:42:13-58
+61            android:exported="true" >
+61-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:43:13-36
+62            <intent-filter>
+62-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:44:13-49:29
+63                <action android:name="android.intent.action.VIEW" />
+63-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:45:17-69
+63-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:45:25-66
+64
+65                <category android:name="android.intent.category.DEFAULT" />
+65-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:46:17-76
+65-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:46:27-73
+66                <category android:name="android.intent.category.BROWSABLE" />
+66-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:47:17-78
+66-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:47:27-75
+67
+68                <data android:scheme="@string/fb_login_protocol_scheme" />
+68-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:48:17-75
+68-->C:\Users\AGAR\Gas_app\android\app\src\main\AndroidManifest.xml:48:23-72
+69            </intent-filter>
+70        </activity>
+71
+72        <service
+72-->[:firebase_auth] C:\Users\AGAR\Gas_app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+73            android:name="com.google.firebase.components.ComponentDiscoveryService"
+73-->[:firebase_auth] C:\Users\AGAR\Gas_app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+74            android:directBootAware="true"
+74-->[com.google.firebase:firebase-common:19.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\6ec7a8af5c144aee6bb9336b201b9fd6\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+75            android:exported="false" >
+75-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:35:13-37
+76            <meta-data
+76-->[:firebase_auth] C:\Users\AGAR\Gas_app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+77                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
+77-->[:firebase_auth] C:\Users\AGAR\Gas_app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-122
+78                android:value="com.google.firebase.components.ComponentRegistrar" />
+78-->[:firebase_auth] C:\Users\AGAR\Gas_app\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+79            <meta-data
+79-->[:cloud_firestore] C:\Users\AGAR\Gas_app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+80                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
+80-->[:cloud_firestore] C:\Users\AGAR\Gas_app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-133
+81                android:value="com.google.firebase.components.ComponentRegistrar" />
+81-->[:cloud_firestore] C:\Users\AGAR\Gas_app\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+82            <meta-data
+82-->[:firebase_database] C:\Users\AGAR\Gas_app\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
+83-->[:firebase_database] C:\Users\AGAR\Gas_app\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-127
+84                android:value="com.google.firebase.components.ComponentRegistrar" />
+84-->[:firebase_database] C:\Users\AGAR\Gas_app\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+85            <meta-data
+85-->[:firebase_core] C:\Users\AGAR\Gas_app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+86                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
+86-->[:firebase_core] C:\Users\AGAR\Gas_app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-123
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[:firebase_core] C:\Users\AGAR\Gas_app\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+88            <meta-data
+88-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:36:13-38:85
+89                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+89-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:37:17-109
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:38:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\4bbc120511d980fbb7553f9b92469335\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:20:13-22:85
+92                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+92-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\4bbc120511d980fbb7553f9b92469335\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:21:17-111
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-firestore:21.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\4bbc120511d980fbb7553f9b92469335\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:22:17-82
+94            <meta-data
+94-->[com.google.firebase:firebase-database:17.0.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\925bbb8d2cb26c1729e1eb4d2f945400\jetified-firebase-database-17.0.0\AndroidManifest.xml:30:13-32:85
+95                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+95-->[com.google.firebase:firebase-database:17.0.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\925bbb8d2cb26c1729e1eb4d2f945400\jetified-firebase-database-17.0.0\AndroidManifest.xml:31:17-109
+96                android:value="com.google.firebase.components.ComponentRegistrar" />
+96-->[com.google.firebase:firebase-database:17.0.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\925bbb8d2cb26c1729e1eb4d2f945400\jetified-firebase-database-17.0.0\AndroidManifest.xml:32:17-82
+97        </service>
+98
+99        <provider
+99-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
+100            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+100-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
+101            android:authorities="com.customermygas.bestweb.my_gas.flutter.image_provider"
+101-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
+102            android:exported="false"
+102-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+103            android:grantUriPermissions="true" >
+103-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
+104            <meta-data
+104-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+105                android:name="android.support.FILE_PROVIDER_PATHS"
+105-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+106                android:resource="@xml/flutter_image_picker_file_paths" />
+106-->[:image_picker] C:\Users\AGAR\Gas_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+107        </provider>
+108
+109        <activity
+109-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:24:9-31:50
+110            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+110-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:25:13-85
+111            android:excludeFromRecents="true"
+111-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:26:13-46
+112            android:exported="true"
+112-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:27:13-36
+113            android:launchMode="singleTask"
+113-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:28:13-44
+114            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+114-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:29:13-102
+115            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+115-->[com.google.firebase:firebase-auth:19.2.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a9f77b23b7b09b18dae5ffbc8dfb5e39\firebase-auth-19.2.0\AndroidManifest.xml:30:13-72
+116        <activity android:name="com.facebook.CustomTabMainActivity" />
+116-->[com.facebook.android:facebook-common:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a1eaa6b03f6444943cbbeb0f1d29ec60\jetified-facebook-common-4.39.0\AndroidManifest.xml:33:9-71
+116-->[com.facebook.android:facebook-common:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\a1eaa6b03f6444943cbbeb0f1d29ec60\jetified-facebook-common-4.39.0\AndroidManifest.xml:33:19-68
+117        <activity
+117-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+118            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+118-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+119            android:excludeFromRecents="true"
+119-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+120            android:exported="false"
+120-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+121            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+121-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+122        <!--
+123            Service handling Google Sign-In user revocation. For apps that do not integrate with
+124            Google Sign-In, this service will never be started.
+125        -->
+126        <service
+126-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+127            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+127-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+128            android:exported="true"
+128-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+129            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+129-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\442ed7cd7679538514e8bfc43005ff25\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+130
+131        <provider
+131-->[com.google.firebase:firebase-common:19.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\6ec7a8af5c144aee6bb9336b201b9fd6\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+132            android:name="com.google.firebase.provider.FirebaseInitProvider"
+132-->[com.google.firebase:firebase-common:19.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\6ec7a8af5c144aee6bb9336b201b9fd6\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+133            android:authorities="com.customermygas.bestweb.my_gas.firebaseinitprovider"
+133-->[com.google.firebase:firebase-common:19.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\6ec7a8af5c144aee6bb9336b201b9fd6\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+134            android:exported="false"
+134-->[com.google.firebase:firebase-common:19.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\6ec7a8af5c144aee6bb9336b201b9fd6\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+135            android:initOrder="100" />
+135-->[com.google.firebase:firebase-common:19.3.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\6ec7a8af5c144aee6bb9336b201b9fd6\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+136
+137        <activity
+137-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\600586170946e69bbfdbb8edb0d3d534\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+138            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+138-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\600586170946e69bbfdbb8edb0d3d534\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+139            android:exported="false"
+139-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\600586170946e69bbfdbb8edb0d3d534\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+140            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+140-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\600586170946e69bbfdbb8edb0d3d534\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+141
+142        <meta-data
+142-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\bb14b88e53a7e2550496bf1d182406d3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+143            android:name="com.google.android.gms.version"
+143-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\bb14b88e53a7e2550496bf1d182406d3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+144            android:value="@integer/google_play_services_version" />
+144-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\bb14b88e53a7e2550496bf1d182406d3\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+145        <!--
+146         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+147         with the application context. This config is merged in with the host app's manifest,
+148         but there can only be one provider with the same authority activated at any given
+149         point; so if the end user has two or more different apps that use Facebook SDK, only the
+150         first one will be able to use the provider. To work around this problem, we use the
+151         following placeholder in the authority to identify each host application as if it was
+152         a completely different provider.
+153        -->
+154        <provider
+154-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:39:9-42:40
+155            android:name="com.facebook.internal.FacebookInitProvider"
+155-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:40:13-70
+156            android:authorities="com.customermygas.bestweb.my_gas.FacebookInitProvider"
+156-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:41:13-72
+157            android:exported="false" />
+157-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:42:13-37
+158
+159        <receiver
+159-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:44:9-50:20
+160            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+160-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:45:13-86
+161            android:exported="false" >
+161-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:46:13-37
+162            <intent-filter>
+162-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:47:13-49:29
+163                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+163-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:48:17-95
+163-->[com.facebook.android:facebook-core:4.39.0] C:\Users\AGAR\.gradle\caches\transforms-2\files-2.1\14fb76f22c1d8ae557674abe3be4d094\jetified-facebook-core-4.39.0\AndroidManifest.xml:48:25-92
+164            </intent-filter>
+165        </receiver>
+166    </application>
+167
+168</manifest>
