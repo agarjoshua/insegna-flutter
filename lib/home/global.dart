@@ -1,8 +1,9 @@
 library insegna.global;
 
- String title;
+var title;
 
-  class User {
+
+class User {
   final int index;
   final String about;
   final String name;
@@ -10,5 +11,7 @@ library insegna.global;
   final String picture;
 
   User(this.index, this.about, this.name, this.email, this.picture);
+
+  var title = User;
 
 }

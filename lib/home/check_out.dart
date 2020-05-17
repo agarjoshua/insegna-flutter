@@ -6,12 +6,16 @@ import 'package:intl/intl.dart';
 import '../const.dart';
 import 'global.dart';
 import 'home_tab.dart';
-import 'order_now.dart';
+
+import 'home_tab.dart';
 
 import 'global.dart' as global;
 
 class CheckOutPage extends StatefulWidget {
 
+  final User user;
+  
+  String title;
   String value;
   String number;
   String address;
@@ -22,6 +26,8 @@ class CheckOutPage extends StatefulWidget {
 
   String index;
 
+  String name;
+
 
   CheckOutPage({
     Key key,
@@ -30,6 +36,9 @@ class CheckOutPage extends StatefulWidget {
     @required this.address,
     @required this.note,
     @required this.size,
+    @required this.title, 
+    @required this.user,
+    @required this.name
     // @required this.imgAsset
     
 
@@ -42,6 +51,8 @@ class CheckOutPage extends StatefulWidget {
     address,
     note,
     size,
+    name,
+    title
     // imgAsset
 
     );
@@ -54,6 +65,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
   String address;
   String note;
   String size;
+  String title;
+  String name;
   // String imgAsset;
 
 
@@ -63,6 +76,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
     this.address,
     this.note,
     this.size,
+    this.title,
+    this.name
     // this.imgAsset,
    
     );
@@ -71,131 +86,83 @@ class _CheckOutPageState extends State<CheckOutPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'CHECKOUT DETAILS',
-          style: Theme.of(context).textTheme.title,
-        ),
-        leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios),
-            onPressed: () {
-              Navigator.pop(context, false);
-            }),
-      ),
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
 
-
-
-            //Top Heading
-            Expanded(
-              flex: 3,
-              child: SingleChildScrollView(
-                padding: EdgeInsets.all(10),
-                physics: AlwaysScrollableScrollPhysics(),
-                child: Container(
-                  padding: EdgeInsets.only(top: 10, bottom: 20),
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text('Order Checkout',
-                              style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                              )),
-                          Text(
-                            '3/3',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Theme.of(context).primaryColor),
-                          ),
-                        ],
-                      ),
-
-
-
-                      //Order Details
-                      Container(
-                        padding: EdgeInsets.only(top: 20),
-                        color: Colors.white,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: <Widget>[
-
-
-
-                            //Vendor Name 
-                            Container(
+                return Scaffold(
+                  appBar: AppBar(
+                    title: Text(
+                      'CHECKOUT DETAILS',
+                      style: Theme.of(context).textTheme.title,
+                    ),
+                    leading: IconButton(
+                        icon: Icon(Icons.arrow_back_ios),
+                        onPressed: () {
+                          Navigator.pop(context, false);
+                        }),
+                  ),
+                  body: SafeArea(
+                    child: Column(
+                      children: <Widget>[
+            
+            
+            
+                        //Top Heading
+                        Expanded(
+                          flex: 3,
+                          child: SingleChildScrollView(
+                            padding: EdgeInsets.all(10),
+                            physics: AlwaysScrollableScrollPhysics(),
+                            child: Container(
+                              padding: EdgeInsets.only(top: 10, bottom: 20),
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text(
-                                    'Vendor name',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w700),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Text('Your delivery information',
+                                          style: TextStyle(
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold,
+                                          )),
+                                      Text(
+                                        '2/2',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme.of(context).primaryColor),
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    title ?? '',
-                                    style:
-                                    TextStyle(fontWeight: FontWeight.w700),
+            
+            
+            
+                        //Order Details
+                        Container(
+                          padding: EdgeInsets.only(top: 20),
+                          color: Colors.white,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: <Widget>[
+                                //Size
+                                Container(
+                                  padding: EdgeInsets.only(top: 20),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        'cylinder Size',
+                                        style:
+                                            TextStyle(fontWeight: FontWeight.w700),
+                                      ),
+                                      Text(
+    
+                                        size ?? '',
+                                        
+                                        style: TextStyle(color: Colors.black54),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                            ),
-
-
-
-                            //Size
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    'cylinder Size',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w700),
-                                  ),
-                                  Text(
-
-                                    widget.size ?? '',
-                                    
-                                    style: TextStyle(color: Colors.black54),
-                                  ),
-                                ],
-                              ),
-                            ),
-
-
-
-                            //Order Type
-                            Container(
-                              padding: EdgeInsets.only(top: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    'Order Cost',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.w700),
-                                  ),
-                                  Text(
-
-                                  //  email ?? '',
-                                  'ayieyaaaa',
-                                    
-                                    style: TextStyle(color: Colors.black54),
-                                  ),
-                                ],
-                              ),
-                            ),
-
-
+                                ),
+ 
                             //name of the person ordering
                             Container(
                               padding: EdgeInsets.only(top: 20),
@@ -364,19 +331,5 @@ class DeliveryInfo {
         'note':note,
         'size':size
       };
-
-  //     factory User.fromJson(Map<String, dynamic> json) {
-  //     return new User(
-  //     id: json['id'],
-  //     firstName: json['firstName'],
-  //     lastName: json['lastName'],
-  //     email: json['email'],
-  //     vip: json['vip'],
-  //     dateOfBirth: json['dateOfBirth'],
-  //     shippingAddresses: json['shippingAddresses'].map((value) => new Address.fromJson(value)).toList()
-  //   );
-  // }
-
-  // String jsonName = jsonEncode(name);
-  // print(jsonName);
 }
+
