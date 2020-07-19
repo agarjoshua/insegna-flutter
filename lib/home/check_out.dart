@@ -1,19 +1,19 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:my_gas/home/apiorder.dart';
 
 import '../const.dart';
+import 'apipost.dart';
 import 'global.dart';
-import 'home_tab.dart';
 
-import 'home_tab.dart';
+import 'package:flutter/foundation.dart';
 
-import 'global.dart' as global;
+import 'dart:convert';
+import 'dart:async';
+import 'package:http/http.dart' as http;
 
 class CheckOutPage extends StatefulWidget {
 
-  final User user;
+  final Stock stock;
   
   String title;
   String value;
@@ -21,12 +21,14 @@ class CheckOutPage extends StatefulWidget {
   String address;
   String note;
   String size;
-  // String imgAsset;
-   
 
   String index;
 
-  String name;
+  String clientname;
+
+  
+  final _formKey = GlobalKey<FormState>();
+  bool exitPage = false;
 
 
   CheckOutPage({
@@ -37,9 +39,8 @@ class CheckOutPage extends StatefulWidget {
     @required this.note,
     @required this.size,
     @required this.title, 
-    @required this.user,
-    @required this.name
-    // @required this.imgAsset
+    @required this.stock,
+    @required this.clientname,
     
 
     }) : super(key : key);
@@ -51,14 +52,15 @@ class CheckOutPage extends StatefulWidget {
     address,
     note,
     size,
-    name,
+    clientname,
     title
-    // imgAsset
 
     );
 }
 
 class _CheckOutPageState extends State<CheckOutPage> {
+
+  Order _order;
 
   String value;
   String number;
@@ -66,9 +68,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
   String note;
   String size;
   String title;
-  String name;
-  // String imgAsset;
-
+  String clientname;
 
   _CheckOutPageState(
     this.value,
@@ -77,12 +77,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
     this.note,
     this.size,
     this.title,
-    this.name
-    // this.imgAsset,
-   
+    this.clientname
     );
-
-//  var imgAsset = OrderNowPage.imgAsset;
 
   @override
   Widget build(BuildContext context) {
@@ -142,6 +138,27 @@ class _CheckOutPageState extends State<CheckOutPage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: <Widget>[
+                               //Size
+                                Container(
+                                  padding: EdgeInsets.only(top: 20),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        'Vendor Name',
+                                        style:
+                                            TextStyle(fontWeight: FontWeight.w700),
+                                      ),
+                                      Text(
+    
+                                        widget.clientname ?? 'placeholder',
+                                        
+                                        style: TextStyle(color: Colors.black54),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
                                 //Size
                                 Container(
                                   padding: EdgeInsets.only(top: 20),
@@ -155,7 +172,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                                       ),
                                       Text(
     
-                                        size ?? '',
+                                        widget.size ?? '',
                                         
                                         style: TextStyle(color: Colors.black54),
                                       ),
@@ -283,7 +300,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         alignment: Alignment.bottomRight,
                         child: CustomButton(
                           text: 'Next',
-                          callback: () {
+                            
+                          callback:() async {
                           //   Navigator.pop(context, true);
                           //  Navigator.push(
                           //    context,
@@ -291,8 +309,15 @@ class _CheckOutPageState extends State<CheckOutPage> {
                           //      builder: (context) => HomeTabe(),
                           //    ),
                           //  );
+
+
+                          //  order();
+
+                           print('success');
                           },
+
                         ),
+                          
                       ),
                     ],
                   ),
@@ -306,30 +331,4 @@ class _CheckOutPageState extends State<CheckOutPage> {
   }
 }
 
-
-class DeliveryInfo {
-  String name;
-  String number;
-  String address;
-  String note;
-  String size;
-  int index;
-  
-  DeliveryInfo({
-    this.name,
-    this.number,
-    this.address,
-    this.note, 
-    this.index,
-    this.size
-    });
-
-    Map toJson() => {
-        'name': name,
-        'number': number,
-        'address': address,
-        'note':note,
-        'size':size
-      };
-}
 

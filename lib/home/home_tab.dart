@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'apiorder.dart';
 import 'check_out.dart';
 
 import '../const.dart';
@@ -24,25 +25,48 @@ class HomeTabe extends StatefulWidget {
 
 class _MyHomePageState extends State<HomeTabe> {
 
-  Future<List<User>> _getUsers() async {
+  // Future<List<User>> _getUsers() async {
 
-    var data = await http.get("http://www.json-generator.com/api/json/get/bZlIcnCsWG?indent=2");
+  //   var data = await http.get("http://www.json-generator.com/api/json/get/bZlIcnCsWG?indent=2");
+
+  //   var jsonData = json.decode(data.body);
+
+  //   List<User> users = [];
+
+  //   for(var u in jsonData){
+
+  //     User user = User(u["index"], u["about"], u["name"], u["email"], u["picture"]);
+
+  //     users.add(user);
+
+  //   }
+
+  //   print(users.length);
+
+  //   return users;
+
+  // }
+
+  Future<List<Stock>> _getStock() async {
+
+    var data = await http.get("http://10.0.2.2:8000/Stock/");
 
     var jsonData = json.decode(data.body);
 
-    List<User> users = [];
+    List<Stock> stocks = [];
 
+    // ignore: unused_local_variable
     for(var u in jsonData){
 
-      User user = User(u["index"], u["about"], u["name"], u["email"], u["picture"]);
+      Stock stock = Stock(u["vendor"], u["gastype"], u["image"], u["price"]);
 
-      users.add(user);
+      stocks.add(stock);
 
     }
 
-    print(users.length);
+        print(stocks.length);
 
-    return users;
+    return stocks;
 
   }
 
@@ -51,7 +75,7 @@ class _MyHomePageState extends State<HomeTabe> {
     return new Scaffold(
       body: Container(
           child: FutureBuilder(
-            future: _getUsers(),
+            future: _getStock(),
             builder: (BuildContext context, AsyncSnapshot snapshot){
               print(snapshot.data);
               if(snapshot.data == null){
@@ -65,24 +89,26 @@ class _MyHomePageState extends State<HomeTabe> {
                   itemCount: snapshot.data.length,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
-                      // leading: CircleAvatar(
-                      //   backgroundImage: NetworkImage(
-                      //     snapshot.data[index].picture,
-                      //   ),
-                      // ),
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          snapshot.data[index].image,
+                        ),
+                      ),
 
 
                       title: Text(                       
-                        snapshot.data[index].name ?? '',
+                        snapshot.data[index].vendor ?? '',
                         textAlign: TextAlign.center,
                         ),
 
 
-                      // subtitle: Text(snapshot.data[index].email ?? '')
+                      // subtitle: Text(snapshot.data[index].price ?? '')
                       subtitle: Column(
                         children: <Widget>[
-                          Text(snapshot.data[index].email ?? ''),
-                      // Text(snapshot.data[index].about ?? '')
+                          Text(
+                            snapshot.data[index].gastype ?? ''
+                            // snapshot.data[index].price ?? '';
+                          )
                         ],
                       ),
 
@@ -106,19 +132,48 @@ class _MyHomePageState extends State<HomeTabe> {
 
 class DetailPage extends StatelessWidget {
 
-  final User user;
+  final Stock stock;
 
     String value;
     String number;
     String address;
     String note;
     String size;
-    var name;
+    String clientname;
 
-  DetailPage(this.user);
+  DetailPage(this.stock);
   
   final _formKey = GlobalKey<FormState>();
   bool exitPage = false;
+
+
+  Future<Order> createOrder(String name,String number,String address,String size,String note) async{
+    final String apiUrl = 'http://10.0.2.2:8000/Order/';
+
+    final response = await http.post(apiUrl, body:{
+      "name": name,
+      "number": number,
+      "address": address,
+      "size": size,
+      "note": note
+    });
+
+    if(response.statusCode == 201){
+      final String responseString = response.body;
+
+      return orderFromJson(responseString); 
+    }else{
+      return null;
+    }
+  }
+
+  Order _order;
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController numberController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+  final TextEditingController sizeController = TextEditingController();
+  final TextEditingController noteController = TextEditingController();
   
   @override
   Widget build(BuildContext context) {
@@ -161,7 +216,7 @@ class DetailPage extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Text(
-                                    'vendor : ' + user.name,
+                                    'vendor : ' + stock.vendor,
                                     style: TextStyle(
                                       fontSize: 30,
                                       fontWeight: FontWeight.bold,
@@ -235,6 +290,8 @@ class DetailPage extends StatelessWidget {
                                             size = volume;
                                             print(volume);
                                           },
+                                          controller: sizeController,
+                                            
                                           decoration: InputDecoration(
                                             labelText: "Gas in kgs(either 3kgs, 12kgs or 22kgs)",
                                             labelStyle: TextStyle(
@@ -260,9 +317,11 @@ class DetailPage extends StatelessWidget {
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: TextFormField(
-                                          onChanged: (name){
-                                            value = name;
+                                          onChanged: (clientname){
+                                            value = clientname;
                                           },
+                                          controller: nameController,
+
                                           decoration: InputDecoration(
                                             labelText: "Name",
                                             labelStyle: TextStyle(
@@ -292,6 +351,8 @@ class DetailPage extends StatelessWidget {
                                           onChanged: (phone) {
                                             number = phone;
                                           },
+                                          controller: numberController,
+
                                           // keyboardType: TextInputType.phone,
                                           decoration: InputDecoration(
                                             labelText: "Phone",
@@ -324,6 +385,9 @@ class DetailPage extends StatelessWidget {
                                           onChanged: (building) {
                                             address = building;
                                           },
+
+                                          controller: addressController,
+
                                           decoration: InputDecoration(
                                             labelText: "Your building name (Delivery Address)",
                                             labelStyle: TextStyle(
@@ -358,6 +422,7 @@ class DetailPage extends StatelessWidget {
                                 onChanged: (info){
                                    note = info;
                                 },
+                                controller: noteController,
 
                                 decoration: InputDecoration(
                                   labelText: "Anything to note on your gas delivery",
@@ -409,6 +474,20 @@ class DetailPage extends StatelessWidget {
                         child: CustomButton(
                           text: 'Next',
                           callback: () async {
+
+                            final String name = nameController.text;
+                            final String number = numberController.text;
+                            final String address = addressController.text;
+                            final String size = sizeController.text;
+                            final String note = noteController.text;
+  
+                            final Order order = await createOrder(name, number, address, size, note);
+
+                            // setState(() {
+                            //   _user = user;
+                            // });
+
+                            
                            if (_formKey.currentState.validate()) {
                             exitPage = await Navigator.push(
                               context,
@@ -420,12 +499,14 @@ class DetailPage extends StatelessWidget {
                                   address : address,
                                   note : note,
                                   size : size,
-                                  name : name, 
+                                  clientname : clientname, 
                                   title: title,
-                                  // imgAsset: imgAsset,
 
                                   ),
                               ),
+
+                              
+
                             );
                            }
                           },
@@ -441,7 +522,7 @@ class DetailPage extends StatelessWidget {
       ),
     );
   }
-      }
+ }
 
 
 
