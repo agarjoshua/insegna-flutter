@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
               margin: EdgeInsets.all(25),
               child: FittedBox(
                 child: Text(
-                  '2019 \u00a9  My Gas. All Rights Reserved',
+                  '2020 \u00a9  Insegna. All Rights Reserved',
                   style: TextStyle(
                     fontSize: 11,
                   ),

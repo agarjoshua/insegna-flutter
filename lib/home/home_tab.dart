@@ -25,27 +25,6 @@ class HomeTabe extends StatefulWidget {
 
 class _MyHomePageState extends State<HomeTabe> {
 
-  // Future<List<User>> _getUsers() async {
-
-  //   var data = await http.get("http://www.json-generator.com/api/json/get/bZlIcnCsWG?indent=2");
-
-  //   var jsonData = json.decode(data.body);
-
-  //   List<User> users = [];
-
-  //   for(var u in jsonData){
-
-  //     User user = User(u["index"], u["about"], u["name"], u["email"], u["picture"]);
-
-  //     users.add(user);
-
-  //   }
-
-  //   print(users.length);
-
-  //   return users;
-
-  // }
 
   Future<List<Stock>> _getStock() async {
 
@@ -89,11 +68,11 @@ class _MyHomePageState extends State<HomeTabe> {
                   itemCount: snapshot.data.length,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                          snapshot.data[index].image,
-                        ),
-                      ),
+                      // leading: CircleAvatar(
+                      //   backgroundImage: NetworkImage(
+                      //     snapshot.data[index].image,
+                      //   ),
+                      // ),
 
 
                       title: Text(                       
@@ -119,6 +98,8 @@ class _MyHomePageState extends State<HomeTabe> {
                         );
                       },
 
+                      
+
                     );
                   },
                 );
@@ -133,7 +114,8 @@ class _MyHomePageState extends State<HomeTabe> {
 class DetailPage extends StatelessWidget {
 
   final Stock stock;
-
+    
+    String vendor;
     String value;
     String number;
     String address;
@@ -147,15 +129,18 @@ class DetailPage extends StatelessWidget {
   bool exitPage = false;
 
 
-  Future<Order> createOrder(String name,String number,String address,String size,String note) async{
+  Future<Order> createOrder(String id,String vendor, String name, String number, String address, String size, String note) async{
     final String apiUrl = 'http://10.0.2.2:8000/Order/';
 
     final response = await http.post(apiUrl, body:{
+      "id": vendor,
+      "vendor": vendor,
       "name": name,
       "number": number,
       "address": address,
       "size": size,
       "note": note
+
     });
 
     if(response.statusCode == 201){
@@ -168,6 +153,7 @@ class DetailPage extends StatelessWidget {
   }
 
   Order _order;
+
 
   final TextEditingController nameController = TextEditingController();
   final TextEditingController numberController = TextEditingController();
@@ -475,13 +461,14 @@ class DetailPage extends StatelessWidget {
                           text: 'Next',
                           callback: () async {
 
+                            final String vendor = stock.vendor;
                             final String name = nameController.text;
                             final String number = numberController.text;
                             final String address = addressController.text;
                             final String size = sizeController.text;
                             final String note = noteController.text;
   
-                            final Order order = await createOrder(name, number, address, size, note);
+                            final Order order = await createOrder(vendor, name, number, address, size, note);
 
                             // setState(() {
                             //   _user = user;
@@ -494,6 +481,7 @@ class DetailPage extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (context) => CheckOutPage(
                                   
+                                  vendor : vendor,
                                   value : value,
                                   number : number,
                                   address : address,
@@ -504,8 +492,6 @@ class DetailPage extends StatelessWidget {
 
                                   ),
                               ),
-
-                              
 
                             );
                            }

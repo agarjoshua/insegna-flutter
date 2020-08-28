@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_gas/home/apiorder.dart';
 
 import '../const.dart';
-import 'apipost.dart';
+
 import 'global.dart';
 
 import 'package:flutter/foundation.dart';
@@ -15,6 +15,7 @@ class CheckOutPage extends StatefulWidget {
 
   final Stock stock;
   
+  String vendor;
   String title;
   String value;
   String number;
@@ -33,6 +34,7 @@ class CheckOutPage extends StatefulWidget {
 
   CheckOutPage({
     Key key,
+    @required this.vendor,
     @required this.value,
     @required this.number,
     @required this.address,
@@ -47,6 +49,7 @@ class CheckOutPage extends StatefulWidget {
 
   @override
   _CheckOutPageState createState() => _CheckOutPageState(
+    vendor,
     value,
     number,
     address,
@@ -62,6 +65,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
 
   Order _order;
 
+
+  String vendor;
   String value;
   String number;
   String address;
@@ -71,6 +76,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
   String clientname;
 
   _CheckOutPageState(
+    this.vendor,
     this.value,
     this.number,
     this.address,
@@ -145,13 +151,13 @@ class _CheckOutPageState extends State<CheckOutPage> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Text(
-                                        'Vendor Name',
+                                          'Vendor Name',
                                         style:
                                             TextStyle(fontWeight: FontWeight.w700),
                                       ),
                                       Text(
     
-                                        widget.clientname ?? 'placeholder',
+                                        vendor ?? 'vendor',
                                         
                                         style: TextStyle(color: Colors.black54),
                                       ),
@@ -313,7 +319,11 @@ class _CheckOutPageState extends State<CheckOutPage> {
 
                           //  order();
 
-                           print('success');
+                           print(
+                             
+                              vendor,
+
+                           );
                           },
 
                         ),
